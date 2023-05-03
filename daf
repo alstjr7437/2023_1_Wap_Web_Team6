@@ -1,0 +1,255 @@
+[33mcommit 5be42379c3398fb4c19d6cc0066795583fdb10fd[m[33m ([m[1;36mHEAD -> [m[1;32malstjr7437-main[m[33m, [m[1;31mupstream/feature/NavBar[m[33m, [m[1;31mupstream/develop[m[33m, [m[1;31mupstream/HEAD[m[33m, [m[1;32mdevelop[m[33m)[m
+Author: sujeong <qkrtnwjd4212@naver.com>
+Date:   Tue May 2 10:35:18 2023 +0900
+
+    fix: NavBar에서 레시피 탭이 기본으로 선택되어 있는 오류 수정
+
+[33mcommit 6fa5e472a8cbcb025dfdcc0929270bbdcefeec7a[m
+Author: yunjikwak <mia007478@gmail.com>
+Date:   Mon May 1 16:43:48 2023 +0900
+
+    feat: 폰트 및 스타일 추가
+
+[33mcommit c0077768cff275c721d9a59fa7e573d03bd1ac36[m
+Merge: f268d8637 59f07be32
+Author: 김민석|Minseok Kim <alstjr7437@naver.com>
+Date:   Mon May 1 16:09:16 2023 +0900
+
+    Merge pull request #28 from pknu-wap/main
+    
+    파일 정리
+
+[33mcommit 59f07be32f3ba39e6f3005eac62279e19dcf3428[m[33m ([m[1;31mupstream/backendTest[m[33m)[m
+Merge: a4c144ec5 80251971f
+Author: 김민석|Minseok Kim <alstjr7437@naver.com>
+Date:   Mon May 1 16:08:04 2023 +0900
+
+    Merge pull request #27 from alstjr7437/main
+    
+    firebase 삭제
+
+[33mcommit 80251971ff648ce82b32162c2cb8c32de9abd2c9[m
+Author: 김민석|Minseok Kim <alstjr7437@naver.com>
+Date:   Mon May 1 16:07:31 2023 +0900
+
+    firebase 삭제
+
+[33mcommit f268d8637273886b339f2a60976eb6484738bf3d[m
+Merge: 7b6c581c4 06c82a9b4
+Author: yunjikwak <mia007478@gmail.com>
+Date:   Mon May 1 16:06:38 2023 +0900
+
+    Merge branch 'develop' of github.com:pknu-wap/2023_1_Wap_Web_Team6 into develop
+
+[33mcommit 06c82a9b44cc95fc31d322f0605623244bc849a2[m
+Merge: 199c6cef1 0bac05f8a
+Author: qkrtnwjd4212 <80205505+qkrtnwjd4212@users.noreply.github.com>
+Date:   Mon May 1 16:06:02 2023 +0900
+
+    Merge pull request #26 from pknu-wap/feature/Main
+    
+    Feature/main
+
+[33mcommit 7b6c581c43f31396bf8393bb8a98fe74eb1d9ae4[m
+Merge: 1d97b8ae3 199c6cef1
+Author: yunjikwak <mia007478@gmail.com>
+Date:   Mon May 1 16:03:20 2023 +0900
+
+    Merge branch 'develop' of github.com:pknu-wap/2023_1_Wap_Web_Team6 into develop
+
+[33mcommit bd7d91fa82a42e2474dfc1332eccca1321bcefc3[m
+Author: 김민석|Minseok Kim <alstjr7437@naver.com>
+Date:   Mon May 1 16:02:30 2023 +0900
+
+    파일 변경(fork 이상해져서)
+
+[33mcommit 199c6cef168a438d5d317d3079b6613d34ba8bfa[m
+Merge: d1ac7ebb3 f2d3dca59
+Author: yunjikwak <83887485+yunjikwak@users.noreply.github.com>
+Date:   Mon May 1 16:01:55 2023 +0900
+
+    Merge pull request #25 from pknu-wap/feature/login
+    
+    fix: 버튼 disabled 수정
+
+[33mcommit d1ac7ebb3adaeaa5c97293ca2aba283658991210[m
+Merge: f40ce8016 a214835ec
+Author: yunjikwak <83887485+yunjikwak@users.noreply.github.com>
+Date:   Mon May 1 16:01:39 2023 +0900
+
+    Merge pull request #24 from pknu-wap/feature/Join
+    
+    Feature/join
+
+[33mcommit f2d3dca5950909607647f11ffc63f3eae0ee4d0d[m[33m ([m[1;31mupstream/feature/login[m[33m)[m
+Author: yunjikwak <mia007478@gmail.com>
+Date:   Mon May 1 16:01:11 2023 +0900
+
+    fix: 버튼 disabled 수정
+
+[33mcommit 1d97b8ae3c7be491261c237ff97d46d129e7d482[m
+Merge: a214835ec f40ce8016
+Author: yunjikwak <mia007478@gmail.com>
+Date:   Mon May 1 15:51:57 2023 +0900
+
+    Merge branch 'develop' of github.com:pknu-wap/2023_1_Wap_Web_Team6 into develop
+
+[33mcommit 0bac05f8a746a30a267e51726906677ef4102e68[m
+Author: sujeong <qkrtnwjd4212@naver.com>
+Date:   Mon May 1 15:45:10 2023 +0900
+
+    refactor: 메인페이지 컴포넌트 분리
+
+[33mcommit 36b72408f8ad33f53071917d2765b578d19553fa[m
+Merge: 1586bc0ee a4c144ec5
+Author: 김민석|Minseok Kim <alstjr7437@naver.com>
+Date:   Mon May 1 15:39:46 2023 +0900
+
+    Merge pull request #6 from pknu-wap/main
+    
+    Main
+
+[33mcommit a4c144ec53002c22fe6d31807b1799f2b02a68d2[m
+Merge: f27bb6a58 f40ce8016
+Author: 김민석|Minseok Kim <alstjr7437@naver.com>
+Date:   Mon May 1 15:37:57 2023 +0900
+
+    Merge pull request #23 from pknu-wap/develop
+    
+    test
+
+[33mcommit f40ce801690e2aaa942560197cc30d65c962c178[m
+Merge: ae7d283e5 f27bb6a58
+Author: 김민석|Minseok Kim <alstjr7437@naver.com>
+Date:   Mon May 1 15:37:20 2023 +0900
+
+    Merge branch 'main' into develop
+
+[33mcommit 56d3856b525069dcdf6c5d5f84d8be8b101a8f0c[m
+Author: sujeong <qkrtnwjd4212@naver.com>
+Date:   Mon May 1 15:28:06 2023 +0900
+
+    style: 샘플 이미지 추가
+
+[33mcommit a214835ecaa10983e174ee078397ddc9ca49d83e[m[33m ([m[1;31mupstream/feature/Join[m[33m)[m
+Author: yunjikwak <mia007478@gmail.com>
+Date:   Mon May 1 15:16:32 2023 +0900
+
+    feat: join regex 추가
+
+[33mcommit ae7d283e5a35cafeb488fc5654f1dccc7a28d442[m
+Merge: 93476e032 74dd823be
+Author: 김민석|Minseok Kim <alstjr7437@naver.com>
+Date:   Mon May 1 15:10:45 2023 +0900
+
+    Merge branch 'develop' of https://github.com/pknu-wap/2023_1_Wap_Web_Team6 into develop
+
+[33mcommit 93476e032dd78f1f1e84c7b9e1240cb9ba57d064[m
+Author: 김민석|Minseok Kim <alstjr7437@naver.com>
+Date:   Mon May 1 15:10:41 2023 +0900
+
+    test
+
+[33mcommit 74dd823be7f9e430743b63f05a412ff1bda540fc[m
+Merge: cb3df61a9 4b6423eb9
+Author: sujeong <qkrtnwjd4212@naver.com>
+Date:   Mon May 1 14:45:00 2023 +0900
+
+    Merge branch 'develop' of https://github.com/pknu-wap/2023_1_Wap_Web_Team6 into develop
+
+[33mcommit cb3df61a9a1dc0990f16c04bcb58a552fca2c9e9[m
+Author: sujeong <qkrtnwjd4212@naver.com>
+Date:   Mon May 1 14:44:52 2023 +0900
+
+    style: 컬러 팔레트 추가
+
+[33mcommit bfa4d123c3879333497dbd6ae42b9f30184c392e[m
+Author: yunjikwak <mia007478@gmail.com>
+Date:   Mon May 1 14:17:59 2023 +0900
+
+    feat: 회원가입 페이지 추가
+
+[33mcommit 4b6423eb9d95ddeebf564865cc9cc28a549a7638[m
+Author: yunjikwak <mia007478@gmail.com>
+Date:   Mon May 1 14:15:30 2023 +0900
+
+    feat: 회원가입 router 연결
+
+[33mcommit cb54709471a9c88489e51272055037e0fbc756db[m
+Merge: 50120e13c 917379848
+Author: yunjikwak <83887485+yunjikwak@users.noreply.github.com>
+Date:   Mon May 1 13:53:27 2023 +0900
+
+    Merge pull request #22 from pknu-wap/feature/login
+    
+    feat: 로그인 regex 추가
+
+[33mcommit 917379848eb52fcfd13c5b2405e2a361bdc9968e[m
+Author: yunjikwak <mia007478@gmail.com>
+Date:   Mon May 1 13:52:28 2023 +0900
+
+    feat: 로그인 regex 추가
+
+[33mcommit 50120e13c5a2be0397a3157bb0680bb0dccf206f[m
+Merge: 386664ff7 24a182748
+Author: yunjikwak <83887485+yunjikwak@users.noreply.github.com>
+Date:   Mon May 1 13:49:28 2023 +0900
+
+    Merge pull request #21 from pknu-wap/feature/UIContainer
+    
+    feat:max-width 추가
+
+[33mcommit 24a1827489b3127c0096aafab0dc4750f536397e[m[33m ([m[1;31mupstream/feature/UIContainer[m[33m)[m
+Author: yunjikwak <mia007478@gmail.com>
+Date:   Mon May 1 13:48:04 2023 +0900
+
+    feat:max-width 추가
+
+[33mcommit 386664ff78d8b341ef56bab3b9728cc29478fbb1[m
+Merge: 476cd207c 70bbab9c6
+Author: 김민석|Minseok Kim <alstjr7437@naver.com>
+Date:   Mon May 1 13:34:55 2023 +0900
+
+    Merge branch 'develop' of https://github.com/pknu-wap/2023_1_Wap_Web_Team6 into develop
+
+[33mcommit 476cd207c6a170834f8752acec2cbe9c82ea849f[m
+Author: 김민석|Minseok Kim <alstjr7437@naver.com>
+Date:   Mon May 1 13:34:52 2023 +0900
+
+    front commit
+
+[33mcommit 70bbab9c60d23a4d3c744badb6d7d73ce65e83f3[m
+Merge: fc1de1d59 51a577093
+Author: qkrtnwjd4212 <80205505+qkrtnwjd4212@users.noreply.github.com>
+Date:   Mon May 1 13:24:07 2023 +0900
+
+    Merge pull request #20 from pknu-wap/feature/Main
+    
+    feat: Carousel, Slide 틀 추가
+
+[33mcommit f27bb6a582b75ebc9b6f194edec704d5d7bdae7b[m
+Merge: 1dae1cd6a 1586bc0ee
+Author: 김민석|Minseok Kim <alstjr7437@naver.com>
+Date:   Mon May 1 13:24:05 2023 +0900
+
+    Merge pull request #18 from alstjr7437/main
+    
+    Merge pull request #4 from pknu-wap/main
+
+[33mcommit 51a5770931a5e183d3a4b9b48e93a710a6bd92fe[m
+Author: sujeong <qkrtnwjd4212@naver.com>
+Date:   Mon May 1 13:17:57 2023 +0900
+
+    feat: Carousel, Slide 틀 추가
+
+[33mcommit 1586bc0ee0693c99c56be8f7dc3a3c2ca62aaa31[m
+Merge: f39f9baea 1dae1cd6a
+Author: 김민석|Minseok Kim <alstjr7437@naver.com>
+Date:   Mon May 1 13:12:27 2023 +0900
+
+    Merge pull request #4 from pknu-wap/main
+    
+    Merge pull request #16 from alstjr7437/main
+
+[33mcommit fc1de1d59560dab35711a96fe2103b864ca1e9f4[m
+Merge: 75fe
