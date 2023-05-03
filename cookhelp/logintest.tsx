@@ -61,11 +61,9 @@ const ErrorMsg = styled.p`
   margin: 0;
   font-size: 0.8rem;
 `;
-var setId = "";
-var setPassword = "";
+
 const Login = () => {
   const [validId, setvalidId] = useState(false);
-  
   const [validPassword, setvalidPassword] = useState(false);
   //영문자로 시작하는 영문자 또는 숫자 6~20자
   const isId = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -73,10 +71,7 @@ const Login = () => {
     if (!regExp.test(e.target.value)) {
       // console.log(e.target.value);
       setvalidId(false);
-    } else {
-      setId = e.target.value;
-      setvalidId(true);
-    }
+    } else setvalidId(true);
   };
 
   //8 ~ 16자 영문, 숫자 조합
@@ -86,7 +81,6 @@ const Login = () => {
       // console.log(e.target.value);
       setvalidPassword(false);
     } else {
-      setPassword = e.target.value;
       setvalidPassword(true)
     };
   };
@@ -123,15 +117,12 @@ const Login = () => {
 
             <Button disabled={!validId || !validPassword} className="btn" type="submit" value="로그인" onClick={() => {
               const userData = {
-                setId: setId,
-                setPassword: setPassword,
+                validId: validId,
+                validPassword: validPassword,
               };
-              // fetch('https://localhost:5000/hello')
-              // .then((response)=>response.json())
-              // .then((data) => console.log(data));
-              fetch("http://localhost:5000/api/login", { //auth 주소에서 받을 예정
+              fetch("https://localhost:5000/api/login", { //auth 주소에서 받을 예정
                 method: "post", // method :통신방법
-                headers: {       // headers: API 응답에 대한 정보를 담음
+                headers: {      // headers: API 응답에 대한 정보를 담음
                   "content-type": "application/json",
                 },
                 body: JSON.stringify(userData), //userData라는 객체를 보냄
@@ -144,7 +135,7 @@ const Login = () => {
                   else {
                     alert(json.isLogin)
                   }
-                }); 
+                });
             }} >
               로그인
             </Button>

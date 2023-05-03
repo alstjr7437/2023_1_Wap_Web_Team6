@@ -87,7 +87,6 @@ const ErrorMsg = styled.p`
 const SelectError = styled(ErrorMsg)`
   margin-top: 0.5rem;
 `;
-
 const Join = () => {
   const [clickedCategory, setClickCategory] = useState("");
   const foodStyle = ["한식", "중식", "일식", "양식"];
@@ -216,7 +215,31 @@ const Join = () => {
                 !checkPassword ||
                 !name ||
                 !selectFood
-              }
+              }// onClick={() => {
+              //   const userData = {
+              //     isId: isId,
+              //     isPassword: isPassword,
+              //     handleNickName : handleNickName,
+              //     selectFood : selectFood
+              //   };
+              //   fetch("http://localhost:5000/Join", { //signin 주소에서 받을 예정
+              //     method: "post", // method :통신방법
+              //     headers: {      // headers: API 응답에 대한 정보를 담음
+              //       "content-type": "application/json",
+              //     },
+              //     body: JSON.stringify(userData), //userData라는 객체를 보냄
+              //   })
+              //     .then((res) => res.json())
+              //     .then((json) => {
+              //       if(json.isSuccess==="True"){
+              //         alert('회원가입이 완료되었습니다!')
+              //         props.setMode("LOGIN");
+              //       }
+              //       else{
+              //         alert(json.isSuccess)
+              //       }
+              //     });
+              // }} 
             >
               회원가입
             </Button>
