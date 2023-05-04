@@ -87,6 +87,11 @@ const ErrorMsg = styled.p`
 const SelectError = styled(ErrorMsg)`
   margin-top: 0.5rem;
 `;
+var joinId = "";
+var joinPassword = "";
+var joinName = "";
+var joinSelectFood = ""; 
+
 const Join = () => {
   const [clickedCategory, setClickCategory] = useState("");
   const foodStyle = ["한식", "중식", "일식", "양식"];
@@ -102,6 +107,7 @@ const Join = () => {
     e.preventDefault();
     setSelectFood(true);
     setClickCategory(e.currentTarget.name);
+    joinSelectFood = e.currentTarget.name;
   };
 
   //영문자로 시작하는 영문자 또는 숫자 6~20자
@@ -109,6 +115,7 @@ const Join = () => {
     const regExp = /^[a-z]+[a-z0-9]{5,19}$/g;
     if (!regExp.test(e.target.value)) {
       // console.log(e.target.value);
+      joinId = e.target.value;
       setvalidId(false);
     } else setvalidId(true);
   };
@@ -127,13 +134,18 @@ const Join = () => {
   const confirmPassword = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.value !== password) {
       // console.log(e.target.value);
+      joinPassword = e.target.value;
       setCheckPassword(false);
     } else setCheckPassword(true);
   };
 
   const handleNickName = (e: React.ChangeEvent<HTMLInputElement>) => {
     const regExp = /^[a-zA-Z0-9ㄱ-ㅎㅏ-ㅣ가-힣]+$/g;
-    if (!regExp.test(e.target.value)) setName(false);
+    console.log(e.target.value);
+    joinName = e.target.value;
+    if (!regExp.test(e.target.value)){
+      setName(false);
+    } 
     else setName(true);
   };
 
@@ -215,31 +227,31 @@ const Join = () => {
                 !checkPassword ||
                 !name ||
                 !selectFood
-              }// onClick={() => {
-              //   const userData = {
-              //     isId: isId,
-              //     isPassword: isPassword,
-              //     handleNickName : handleNickName,
-              //     selectFood : selectFood
-              //   };
-              //   fetch("http://localhost:5000/Join", { //signin 주소에서 받을 예정
-              //     method: "post", // method :통신방법
-              //     headers: {      // headers: API 응답에 대한 정보를 담음
-              //       "content-type": "application/json",
-              //     },
-              //     body: JSON.stringify(userData), //userData라는 객체를 보냄
-              //   })
-              //     .then((res) => res.json())
-              //     .then((json) => {
-              //       if(json.isSuccess==="True"){
-              //         alert('회원가입이 완료되었습니다!')
-              //         props.setMode("LOGIN");
-              //       }
-              //       else{
-              //         alert(json.isSuccess)
-              //       }
-              //     });
-              // }} 
+              } onClick={() => {
+                const userData = {
+                  joinId: joinId,
+                  joinPassword: joinPassword,
+                  joinSelectFood : joinSelectFood,
+                  joinName : joinName
+                };
+                fetch("http://localhost:5000/api/Join", { //signin 주소에서 받을 예정
+                  method: "post", // method :통신방법
+                  headers: {      // headers: API 응답에 대한 정보를 담음
+                    "content-type": "application/json",
+                  },
+                  body: JSON.stringify(userData), //userData라는 객체를 보냄
+                })
+                  .then((res) => res.json())
+                  .then((json) => {
+                    if(json.isSuccess==="True"){
+                      alert('회원가입이 완료되었습니다!')
+                      //props.setMode("LOGIN");
+                    }
+                    else{
+                      alert(json.isSuccess)
+                    }
+                  });
+              }} 
             >
               회원가입
             </Button>
