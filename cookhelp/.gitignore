@@ -26,3 +26,5 @@ yarn-error.log*
 
 # database
 /lib
+
+.yarn.lock
