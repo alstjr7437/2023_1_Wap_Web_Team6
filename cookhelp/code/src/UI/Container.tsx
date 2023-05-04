@@ -14,12 +14,13 @@ const StyledContainer = styled.div`
   padding-bottom: 2rem;
 `;
 
-type Props = {
+interface Props {
   children: ReactNode;
-};
+  className?: string;
+}
 
-const Container = ({ children }: Props) => {
-  return <StyledContainer>{children}</StyledContainer>;
+const Container = ({ className, children }: Props) => {
+  return <StyledContainer className={className}>{children}</StyledContainer>;
 };
 
 export default Container;

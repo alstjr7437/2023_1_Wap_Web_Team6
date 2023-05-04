@@ -8,9 +8,14 @@ import { CardActionArea } from '@mui/material';
 const CardWrapper = styled.div`
   flex-basis: 0;
   flex-grow: 1;
+  margin-bottom: 30px;
 `;
 
-// JSX에서는 props를 객체 형태로 전달하기 때문에 props의 타입도 객체 형태로 정의해줘야 함!!
+const CardTitle = styled.div`
+  font-weight: var(--semiBold-font);
+  margin-top: -5px;
+`;
+
 type FoodGenreCardsProps = {
   genreName: string;
   imgSrc: string;
@@ -28,7 +33,7 @@ function FoodGenreCards(props: FoodGenreCardsProps) {
           />
           <CardContent>
             <Typography gutterBottom variant="h5" component="div">
-              {props.genreName}
+              <CardTitle>{props.genreName}</CardTitle>
             </Typography>
             <Typography variant="body2" color="text.secondary">
               Sample Paragraph
