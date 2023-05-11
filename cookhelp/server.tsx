@@ -8,7 +8,7 @@ const fs = require('fs');
 const bcrypt = require('bcrypt');
 //express 서버
 // port 설정 부분
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 8081;
 
 const db = require('./lib/db.tsx');
 const sessionOption = require('./lib/sessionOption.tsx');
@@ -37,6 +37,7 @@ app.get('/api/logout', function (req, res) {
 });
 
 app.post("/api/login", (req, res) => { // 데이터 받아서 결과 전송
+    console.log('hello')
     const userId = req.body.setId;
     const password = req.body.setPassword;
     const sendData = { isLogin: "" };
@@ -77,7 +78,6 @@ app.post("/api/login", (req, res) => { // 데이터 받아서 결과 전송
 });
 
 app.post("/api/Join", (req, res) => {  // 데이터 받아서 결과 전송
-    console.log('hello')
     const userId = req.body.joinId;
     const userPassword = req.body.joinPassword;
     const userName = req.body.joinName;

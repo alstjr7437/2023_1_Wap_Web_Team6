@@ -129,7 +129,7 @@ const Login = () => {
               // fetch('https://localhost:5000/hello')
               // .then((response)=>response.json())
               // .then((data) => console.log(data));
-              fetch("http://localhost:5000/api/login", { //auth 주소에서 받을 예정
+              fetch("http://localhost:8081/api/login", { //auth 주소에서 받을 예정
                 method: "post", // method :통신방법
                 headers: {       // headers: API 응답에 대한 정보를 담음
                   "content-type": "application/json",

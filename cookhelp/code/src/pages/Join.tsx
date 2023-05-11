@@ -234,7 +234,7 @@ const Join = () => {
                   joinSelectFood : joinSelectFood,
                   joinName : joinName
                 };
-                fetch("http://localhost:5000/api/Join", { //signin 주소에서 받을 예정
+                fetch("http://localhost:8081/api/Join", { //signin 주소에서 받을 예정
                   method: "post", // method :통신방법
                   headers: {      // headers: API 응답에 대한 정보를 담음
                     "content-type": "application/json",
@@ -245,6 +245,7 @@ const Join = () => {
                   .then((json) => {
                     if(json.isSuccess==="True"){
                       alert('회원가입이 완료되었습니다!')
+                      console.log('회원가입완료!')
                       //props.setMode("LOGIN");
                     }
                     else{
