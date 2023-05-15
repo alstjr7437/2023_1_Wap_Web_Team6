@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { RecipeListType, RecipeCard } from "../components/type";
 
-const useSliderCard = (data: RecipeListType[]) => {
+const useSliderCard = (data: RecipeListType[], moveIdx: number) => {
   const [card, setCard] = useState(data); // recipe 데이터
   const [cardIdx, setCardIdx] = useState(0); // 레시피 순서
 
@@ -26,6 +26,10 @@ const useSliderCard = (data: RecipeListType[]) => {
       document.removeEventListener("keydown", handleKeyDown);
     };
   }, [data, goForward, goBack]);
+
+  useEffect(() => {
+    if (moveIdx != 0) setCardIdx(moveIdx - 1);
+  }, [moveIdx]);
 
   return {
     card,

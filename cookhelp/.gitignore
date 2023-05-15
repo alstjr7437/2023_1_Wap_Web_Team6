@@ -5,6 +5,7 @@
 /.pnp
 .pnp.js
 .database.json
+.yarn.lock
 
 # testing
 /coverage
