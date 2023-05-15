@@ -45,7 +45,7 @@
       <a href="https://github.com/kwakyuji" target="_blank">
         <img src="https://avatars.githubusercontent.com/u/83887485?v=4" width="120px;"/>
         <br />
-        <a href="https://github.com/pknu-wap/2023_1_Wap_Web_Team6/commits/develop?author=kwakyuji" title="Code">kwakyuji 👩‍💻</a>
+        <a href="https://github.com/pknu-wap/2023_1_Wap_Web_Team6/commits/develop?author=yunjikwak" title="Code">yunjikwak 👩‍💻</a>
     </td>
   </tr>
   <tr>
