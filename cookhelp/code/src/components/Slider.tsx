@@ -4,13 +4,16 @@ import useSliderCard from "../hooks/userSliderCard";
 import { RecipeCard, ArrowButtonProps, CardProps } from "./type";
 
 const SliderContainer = styled.div`
-  margin: auto;
+  margin: 1rem 0;
 `;
 const ImgBox = styled.div`
   display: flex;
 `;
 const StyledCard = styled.div`
   margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 const StyledArrowBack = styled.svg`
   width: 15%;
@@ -26,12 +29,12 @@ const SlideImg = styled.img`
   max-width: 600px;
 `;
 const CardIdx = styled.p`
-  font-size: 15px;
+  font-size: 0.8rem;
   margin-bottom: 1rem;
   color: var(--dark-green-color);
-
+  display: flex;
+  justify-content: center;
 `;
-
 
 const ArrowBack = ({ onClick }: ArrowButtonProps) => {
   return (
@@ -72,9 +75,15 @@ const Card = ({ currentCard }: CardProps) => {
   );
 };
 
-const Slider = ({ recipeList }: { recipeList: RecipeCard }) => {
+const Slider = ({
+  recipeList,
+  selectIdx,
+}: {
+  recipeList: RecipeCard;
+  selectIdx: number;
+}) => {
   const { RecipeName, cards } = recipeList;
-  const { card, cardIdx, goForward, goBack } = useSliderCard(cards);
+  const { card, cardIdx, goForward, goBack } = useSliderCard(cards, selectIdx);
 
   return (
     <SliderContainer>

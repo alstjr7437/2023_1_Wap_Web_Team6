@@ -35,3 +35,9 @@ export interface RecipeItemProps {
   RecipeWriter: string;
   RecipeDate: string;
 }
+
+export interface ListProps {
+  stepDetail: string;
+  listNum: number;
+  setSelectIdx: React.Dispatch<React.SetStateAction<number>>;
+}
