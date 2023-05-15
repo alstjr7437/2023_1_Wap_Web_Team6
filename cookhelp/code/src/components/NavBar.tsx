@@ -13,6 +13,7 @@ const NavbarWrapper = styled.div`
   padding: 10px;
   background-color: var(--green-color);
   color: #fff;
+  cursor: pointer;
 `;
 
 const MenuWrapper = styled.div`
@@ -50,10 +51,11 @@ const AuthButton = styled.button`
   padding: 5px 10px;
   border: none;
   border-radius: 5px;
+  font-size: 18px;
 `;
 
 const Navbar = () => {
-  const [activeMenuItem, setActiveMenuItem] = useState(1); // 현재 활성화된 메뉴 아이템의 인덱스를 상태로 관리
+  const [activeMenuItem, setActiveMenuItem] = useState(0); // 현재 활성화된 메뉴 아이템의 인덱스를 상태로 관리
 
   const handleMenuItemClick = (menuItemIndex: number) => {
     setActiveMenuItem(menuItemIndex);
@@ -65,13 +67,19 @@ const Navbar = () => {
       <img
         src="/logo.png"
         alt="logo"
-        width="150px"
-        onClick={() => navigate("/")}
+        width="180px"
+        onClick={() => {
+          navigate("/");
+          handleMenuItemClick(0);
+        }}
       />
       <MenuWrapper>
         <MenuItem
           isActive={activeMenuItem === 1}
-          onClick={() => handleMenuItemClick(1)}
+          onClick={() => {
+            handleMenuItemClick(1);
+            navigate("/recipe_list");
+          }}
         >
           Recipe
         </MenuItem>

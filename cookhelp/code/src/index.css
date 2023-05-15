@@ -1,0 +1,31 @@
+/*Font*/
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap");
+
+:root {
+  /* color palette */
+  --green-color: #678570;
+  --mint-color: #dcfbe5;
+  --light-green-color: #f8fff8;
+  --gray-color: #ccc;
+  --light-gray-color: #e2e2e2;
+  --dark-green-color: #32503b;
+
+  /*font-family*/
+  --ff-gothic: "IBM Plex Sans KR", sans-serif;
+  --ff-batang: "Nanum Myeongjo", serif;
+
+  /*font-weights*/
+  --regular-font: 400;
+  --med-font: 500;
+  --semiBold-font: 600;
+  --Bold-font: 700;
+}
+
+body {
+  background-color: var(--light-green-color);
+}
+
+* {
+  font-family: var(--ff-gothic);
+  font-weight: var(--med-font);
+}

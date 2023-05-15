@@ -61,18 +61,36 @@ const ErrorMsg = styled.p`
   margin: 0;
   font-size: 0.8rem;
 `;
-
+// var setId = "";
+// var setPassword = "";
 const Login = () => {
-  const [validId, setvalidId] = useState(false);
-  const [validPassword, setvalidPassword] = useState(false);
+  // 변수 담기
+  const [login, setLogin] = useState({
+    Id: "",
+    Password: "",
+  });
 
+  const handleValueChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setLogin({
+      ...login,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const [validId, setvalidId] = useState(false);
+
+  const [validPassword, setvalidPassword] = useState(false);
   //영문자로 시작하는 영문자 또는 숫자 6~20자
   const isId = (e: React.ChangeEvent<HTMLInputElement>) => {
     const regExp = /^[a-z]+[a-z0-9]{5,19}$/g;
     if (!regExp.test(e.target.value)) {
       // console.log(e.target.value);
       setvalidId(false);
-    } else setvalidId(true);
+    } else {
+      // setId = e.target.value;
+      setvalidId(true);
+      handleValueChange(e);
+    }
   };
 
   //8 ~ 16자 영문, 숫자 조합
@@ -81,15 +99,36 @@ const Login = () => {
     if (!regExp.test(e.target.value)) {
       // console.log(e.target.value);
       setvalidPassword(false);
-    } else setvalidPassword(true);
+    } else {
+      // setPassword = e.target.value;
+      setvalidPassword(true);
+      handleValueChange(e);
+    }
   };
 
-  const btnHandler = (e: React.MouseEvent<HTMLButtonElement>) => {
-    const btn: HTMLButtonElement = e.currentTarget;
-    if (!validId || !validPassword) btn.disabled = true;
-    else btn.disabled = false;
-
-    console.log(btn.disabled);
+  const handleBtnClick = (e: React.MouseEvent<HTMLButtonElement>): void => {
+    // fetch('https://localhost:5000/hello')
+    // .then((response)=>response.json())
+    // .then((data) => console.log(data));
+    fetch("http://localhost:8081/api/login", {
+      //auth 주소에서 받을 예정
+      method: "post", // method :통신방법
+      headers: {
+        // headers: API 응답에 대한 정보를 담음
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(login), //login 객체를 보냄
+    })
+      .then((res) => res.json())
+      .then((json) => {
+        console.log("hello");
+        if (json.isLogin === "True") {
+          alert("로그인 성공");
+          console.log("로그인 성공");
+        } else {
+          alert(json.isLogin);
+        }
+      });
   };
 
   return (
@@ -103,6 +142,7 @@ const Login = () => {
             <Input
               onChange={isId}
               type="text"
+              name="Id"
               placeholder="아이디 입력"
             ></Input>
             {!validId && (
@@ -114,6 +154,7 @@ const Login = () => {
             <Input
               onChange={isPassword}
               type="text"
+              name="Password"
               placeholder="비밀번호 입력"
             ></Input>
             {!validPassword && (
@@ -121,7 +162,15 @@ const Login = () => {
             )}
           </FormGroup>
           <ButtonGroup>
-            <Button onClick={btnHandler}>로그인</Button>
+            <Button
+              disabled={!validId || !validPassword}
+              className="btn"
+              type="submit"
+              value="로그인"
+              onClick={() => {}}
+            >
+              로그인
+            </Button>
             <Button>회원가입</Button>
           </ButtonGroup>
         </Form>
