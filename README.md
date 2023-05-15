@@ -27,25 +27,25 @@
       <a href="https://github.com/alstjr7437" target="_blank">
         <img src="https://avatars.githubusercontent.com/u/94051599?v=4" width="120px;"/>
         <br />
-        <a href="https://github.com/pknu-wap/wap-ui/commits/main?author=alstjr7437" title="Code">alstjr7437 👨‍💻</a>
+        <a href="https://github.com/pknu-wap/2023_1_Wap_Web_Team6/commits/develop?author=alstjr7437" title="Code">alstjr7437 👨‍💻</a>
     </td>
     <td align="center">
       <a href="https://github.com/okdoittttt" target="_blank">
         <img src="https://avatars.githubusercontent.com/u/94339333?v=4" width="120px;"/>
         <br />
-        <a href="https://github.com/pknu-wap/wap-ui/commits/main?author=okdoittttt" title="Code">okdoittttt 👨‍💻</a>
+        <a href="https://github.com/pknu-wap/2023_1_Wap_Web_Team6/commits/develop?author=okdoittttt" title="Code">okdoittttt 👨‍💻</a>
     </td>
     <td align="center">
       <a href="https://github.com/qkrtnwjd4212" target="_blank">
         <img src="https://avatars.githubusercontent.com/u/80205505?v=4" width="120px;"/>
         <br />
-        <a href="https://github.com/pknu-wap/wap-ui/commits/main?author=qkrtnwjd4212" title="Code">qkrtnwjd4212 👩‍💻</a>
+        <a href="https://github.com/pknu-wap/2023_1_Wap_Web_Team6/commits/develop?author=qkrtnwjd4212" title="Code">qkrtnwjd4212 👩‍💻</a>
     </td>
     <td align="center">
       <a href="https://github.com/kwakyuji" target="_blank">
         <img src="https://avatars.githubusercontent.com/u/83887485?v=4" width="120px;"/>
         <br />
-        <a href="https://github.com/pknu-wap/wap-ui/commits/main?author=kwakyuji" title="Code">kwakyuji 👩‍💻</a>
+        <a href="https://github.com/pknu-wap/2023_1_Wap_Web_Team6/commits/develop?author=yunjikwak" title="Code">yunjikwak 👩‍💻</a>
     </td>
   </tr>
   <tr>
