@@ -12,7 +12,6 @@ function App() {
   const [deck, setDeck] = useState<RecipeCard[]>(cardData);
 
   let content: ReactNode = <Route path="#" element={<></>} />;
-
   if (deck.length > 0) {
     content = deck.map((card, index) => {
       // console.log(`/recipe/${index}`);
@@ -25,6 +24,9 @@ function App() {
       );
     });
   }
+  const NotFound = () => {
+    return <h1>잘못된 주소 접근</h1>;
+  };
 
   return (
     <div>
@@ -36,6 +38,7 @@ function App() {
           {/* <Route path="/recipe" element={<Recipe />} /> */}
           {content}
           <Route path="/recipe_list" element={<RecipeList />} />
+          <Route path="/*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
     </div>

@@ -37,6 +37,7 @@ export interface RecipeItemProps {
   RecipeImg: string;
   RecipeWriter: string;
   RecipeDate: string;
+  to: string;
 }
 
 export interface ListProps {
