@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import Navbar from "../components/NavBar";
 import Container from "../UI/Container";
+import { Link } from "react-router-dom";
 
 const Title = styled.h2`
   font-size: 24px;
@@ -61,13 +62,11 @@ const ErrorMsg = styled.p`
   margin: 0;
   font-size: 0.8rem;
 `;
-// var setId = "";
-// var setPassword = "";
+
 const Login = () => {
-  // 변수 담기
   const [login, setLogin] = useState({
-    Id: "",
-    Password: "",
+    loginId: "",
+    loginPassword: "",
   });
 
   const handleValueChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -84,10 +83,8 @@ const Login = () => {
   const isId = (e: React.ChangeEvent<HTMLInputElement>) => {
     const regExp = /^[a-z]+[a-z0-9]{5,19}$/g;
     if (!regExp.test(e.target.value)) {
-      // console.log(e.target.value);
       setvalidId(false);
     } else {
-      // setId = e.target.value;
       setvalidId(true);
       handleValueChange(e);
     }
@@ -97,19 +94,14 @@ const Login = () => {
   const isPassword = (e: React.ChangeEvent<HTMLInputElement>) => {
     const regExp = /^(?=.*\d)(?=.*[a-zA-Z])[0-9a-zA-Z]{8,16}$/;
     if (!regExp.test(e.target.value)) {
-      // console.log(e.target.value);
       setvalidPassword(false);
     } else {
-      // setPassword = e.target.value;
       setvalidPassword(true);
       handleValueChange(e);
     }
   };
 
   const handleBtnClick = (e: React.MouseEvent<HTMLButtonElement>): void => {
-    // fetch('https://localhost:5000/hello')
-    // .then((response)=>response.json())
-    // .then((data) => console.log(data));
     fetch("http://localhost:8081/api/login", {
       //auth 주소에서 받을 예정
       method: "post", // method :통신방법
@@ -142,7 +134,7 @@ const Login = () => {
             <Input
               onChange={isId}
               type="text"
-              name="Id"
+              name="loginId"
               placeholder="아이디 입력"
             ></Input>
             {!validId && (
@@ -154,7 +146,7 @@ const Login = () => {
             <Input
               onChange={isPassword}
               type="text"
-              name="Password"
+              name="loginPassword"
               placeholder="비밀번호 입력"
             ></Input>
             {!validPassword && (
@@ -167,11 +159,13 @@ const Login = () => {
               className="btn"
               type="submit"
               value="로그인"
-              onClick={() => {}}
+              onClick={handleBtnClick}
             >
               로그인
             </Button>
-            <Button>회원가입</Button>
+            <Link to="/Join">
+              <Button>회원가입</Button>
+            </Link>
           </ButtonGroup>
         </Form>
       </Container>

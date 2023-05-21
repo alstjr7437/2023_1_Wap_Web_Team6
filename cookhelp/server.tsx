@@ -37,9 +37,8 @@ app.get('/api/logout', function (req, res) {
 });
 
 app.post("/api/login", (req, res) => { // 데이터 받아서 결과 전송
-    console.log('hello')
-    const userId = req.body.setId;
-    const password = req.body.setPassword;
+    const userId = req.body.loginId;
+    const password = req.body.loginPassword;
     const sendData = { isLogin: "" };
 
     if (userId && password) {             // id와 pw가 입력되었는지 확인
@@ -83,8 +82,6 @@ app.post("/api/Join", (req, res) => {  // 데이터 받아서 결과 전송
     const userName = req.body.joinName;
     const userSelectFood = req.body.joinSelectFood;
     
-    console.log(userId, userPassword, userName, userSelectFood)
-  
     const sendData = { isSuccess: "" };
 
     if (userId && userPassword && userName && userSelectFood) {

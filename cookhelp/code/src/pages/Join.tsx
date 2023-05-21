@@ -119,14 +119,10 @@ const Join = () => {
   const isId = (e: React.ChangeEvent<HTMLInputElement>) => {
     const regExp = /^[a-z]+[a-z0-9]{5,19}$/g;
     if (!regExp.test(e.target.value)) {
-      // console.log(e.target.value);
-      // joinId = e.target.value;
       setvalidId(false);
-      // setJoinId("");
     } else {
       setvalidId(true);
       handleValueChange(e);
-      // setJoinId(e.target.value);
     }
   };
 
@@ -135,40 +131,30 @@ const Join = () => {
     setPassword(e.target.value);
     const regExp = /^(?=.*\d)(?=.*[a-zA-Z])[0-9a-zA-Z]{8,16}$/;
     if (!regExp.test(e.target.value)) {
-      // console.log(e.target.value);
       setvalidPassword(false);
-      // setJoinPassword("");
     } else {
       setvalidPassword(true);
       handleValueChange(e);
-      // setJoinPassword(e.target.value);
     }
   };
 
   //비밀번호 재확인
   const confirmPassword = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.value !== password) {
-      // console.log(e.target.value);
-      // joinPassword = e.target.value;
       setCheckPassword(false);
-      // setJoinPassword("");
     } else {
       setCheckPassword(true);
-      // setJoinPassword(e.target.value);
     }
   };
 
   const handleNickName = (e: React.ChangeEvent<HTMLInputElement>) => {
     const regExp = /^[a-zA-Z0-9ㄱ-ㅎㅏ-ㅣ가-힣]+$/g;
     console.log(e.target.value);
-    // joinName = e.target.value;
     if (!regExp.test(e.target.value)) {
       setName(false);
-      // setJoinName("");
     } else {
       setName(true);
       handleValueChange(e);
-      // setJoinName(e.target.value);
     }
   };
 
