@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import useSliderCard from "../hooks/userSliderCard";
+import Timer from "./Timer";
 import { RecipeCard, ArrowButtonProps, CardProps } from "./type";
 
 const SliderContainer = styled.div`
@@ -85,6 +86,10 @@ const Slider = ({
   const { RecipeName, cards } = recipeList;
   const { card, cardIdx, goForward, goBack } = useSliderCard(cards, selectIdx);
 
+  // console.log("RecipeName", RecipeName);
+  // console.log("cards", cards);
+  // console.log(cardIdx);
+
   return (
     <SliderContainer>
       {card.length !== 0 && (
@@ -97,6 +102,7 @@ const Slider = ({
           <CardIdx>
             {cardIdx + 1}/{card.length}
           </CardIdx>
+          <Timer curTime={300} />
         </>
       )}
     </SliderContainer>
