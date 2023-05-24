@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 import { RecipeItemProps } from "../components/type";
 
 const StyledRecipeItem = styled.div`
@@ -9,10 +10,13 @@ const StyledRecipeItem = styled.div`
   border: solid;
   border-bottom: 0.5px;
   border-color: var(--gray-color);
+  cursor: pointer;
 `;
-const ListWrapper = styled.div`
+const ListWrapper = styled(Link)`
   display: flex;
   gap: 1rem;
+  text-decoration-line: none;
+  color: black;
 `;
 const ListId = styled.div`
   width: 4%;
@@ -27,16 +31,23 @@ const ListDate = styled.div`
   width: 10%;
 `;
 
-const RecipeItem = ({ RecipeId, RecipeTitle, RecipeImg, RecipeWriter, RecipeDate }: RecipeItemProps) => {
+const RecipeItem = ({
+  RecipeId,
+  RecipeTitle,
+  RecipeImg,
+  RecipeWriter,
+  RecipeDate,
+  to,
+}: RecipeItemProps) => {
   return (
-  <StyledRecipeItem>
-    <ListWrapper>
-      <ListId>{RecipeId}</ListId>
-      <ListTitle>{RecipeTitle}</ListTitle>
-      <ListWriter>{RecipeWriter}</ListWriter>
-      <ListDate>{RecipeDate}</ListDate>
-    </ListWrapper>
-  </StyledRecipeItem>
+    <StyledRecipeItem>
+      <ListWrapper to={to}>
+        <ListId>{RecipeId}</ListId>
+        <ListTitle>{RecipeTitle}</ListTitle>
+        <ListWriter>{RecipeWriter}</ListWriter>
+        <ListDate>{RecipeDate}</ListDate>
+      </ListWrapper>
+    </StyledRecipeItem>
   );
 };
 

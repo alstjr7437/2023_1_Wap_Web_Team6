@@ -6,7 +6,6 @@ import searchLogo from "../assets/searchLogo.png";
 import RecipeItem from "../components/RecipeItem";
 import { searchData } from "../components/type";
 import searchTmpData from "../tmpDB/tmpRecipeListDB";
-import Button from '@mui/material/Button';
 
 const RecipeListContainer = styled(Container)`
   max-width: 60rem;
@@ -46,15 +45,12 @@ const RegisterBtn = styled.button`
 
   margin: auto;
   display: block;
-  
+
   &:hover {
     background-color: var(--dark-green-color);
   }
-
 `;
-const ListWrapper = styled.div`
-
-`;
+const ListWrapper = styled.div``;
 
 const RecipeList = () => {
   return (
@@ -70,14 +66,17 @@ const RecipeList = () => {
           </LogoBox>
 
           <ListBox>
-            {searchTmpData.map((ele: searchData) => {
-              return <RecipeItem
-                RecipeId={ele.id}
-                RecipeTitle={ele.title}
-                RecipeImg={ele.img}
-                RecipeWriter={ele.writer}
-                RecipeDate={ele.date}
-              />;
+            {searchTmpData.map((ele: searchData, index: number) => {
+              return (
+                <RecipeItem
+                  to={`/recipe/${index}`}
+                  RecipeId={ele.id}
+                  RecipeTitle={ele.title}
+                  RecipeImg={ele.img}
+                  RecipeWriter={ele.writer}
+                  RecipeDate={ele.date}
+                />
+              );
             })}
           </ListBox>
         </RecipeListContainer>
