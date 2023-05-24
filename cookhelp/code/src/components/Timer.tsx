@@ -1,5 +1,6 @@
-import React, { useState, useEffect, useRef, useCallback } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
+import useTimer from "../hooks/useTimer";
 
 const BtnWrap = styled.div`
   display: felx;
@@ -16,52 +17,15 @@ const TimerText = styled.h1`
   margin: auto;
 `;
 
-const useCounter = (initialValue: number, ms: number) => {
-  const [count, setCount] = useState(initialValue);
-  const intervalRef = useRef<number | null>(null);
+const Timer = ({ curTime, Idx }: { curTime?: number; Idx: number }) => {
+  const { start, stop, reset, hh, mm, ss } = useTimer(curTime || 0, 1000, Idx);
 
-  const start = useCallback(() => {
-    if (intervalRef.current !== null) {
-      return;
-    }
-    intervalRef.current = window.setInterval(() => {
-      setCount((c) => {
-        if (c <= 0) {
-          stop();
-          return 0;
-        }
-        return c - 1;
-      });
-    }, ms);
-  }, []);
+  // timer 값이 undefined면 null 리턴하고 종료
+  if (curTime === undefined) {
+    return null;
+  }
 
-  const stop = useCallback(() => {
-    if (intervalRef.current === null) return;
-    clearInterval(intervalRef.current);
-    intervalRef.current = null;
-  }, []);
-
-  const reset = useCallback(() => {
-    setCount(initialValue);
-    stop();
-  }, [initialValue, stop]);
-
-  return { count, start, stop, reset };
-};
-
-const Timer = ({ curTime }: { curTime: number }) => {
-  const [hh, setHH] = useState(Math.floor(curTime / 3600));
-  const [mm, setMM] = useState(Math.floor((curTime % 3600) / 60));
-  const [ss, setSS] = useState(curTime % 60);
-  const { count, start, stop, reset } = useCounter(curTime, 1000);
-
-  useEffect(() => {
-    const remainingTime = Math.max(count, 0);
-    setHH(Math.floor(remainingTime / 3600));
-    setMM(Math.floor((remainingTime % 3600) / 60));
-    setSS(remainingTime % 60);
-  }, [count]);
-
+  // console.log("curTime : ", curTime);
   //   console.log(hh, mm, ss);
   //   console.log(count);
 

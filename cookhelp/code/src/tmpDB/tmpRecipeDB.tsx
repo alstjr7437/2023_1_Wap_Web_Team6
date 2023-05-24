@@ -27,6 +27,7 @@ const cardData: RecipeCard[] = [
         pic: "https://cdn.pixabay.com/photo/2015/09/16/20/10/dough-943245_960_720.jpg",
         detail: "3. 소세지와 김치를 볶는다.",
         stepTitle: "재료 볶기",
+        timer: 60, //60s
       },
       {
         id: 3,
@@ -34,6 +35,7 @@ const cardData: RecipeCard[] = [
         pic: "https://cdn.pixabay.com/photo/2017/06/01/18/46/cook-2364221_960_720.jpg",
         detail: "4. 밥을 넣고 중불에 5분간 볶는다.",
         stepTitle: "밥 볶기",
+        timer: 300, //5m
       },
       {
         id: 4,
@@ -71,6 +73,7 @@ const cardData: RecipeCard[] = [
         pic: "https://cdn.pixabay.com/photo/2015/09/16/20/10/dough-943245_960_720.jpg",
         detail: "3. 파향이 맛있게 올라오면 비벼둔 밥을 넣고 같이 볶아준다",
         stepTitle: "밥 볶기",
+        timer: 150, //2m 30s
       },
       {
         id: 3,

@@ -4,6 +4,7 @@ export interface RecipeListType {
   pic: string;
   detail: string;
   stepTitle: string;
+  timer?: number;
 }
 
 export interface RecipeCard {
