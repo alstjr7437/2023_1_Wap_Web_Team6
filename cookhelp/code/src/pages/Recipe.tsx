@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import NavBar from "../components/NavBar";
 import Slider from "../components/Slider";
-import cardData from "../tmpDB/tmpRecipeDB";
 import { RecipeCard, ListProps } from "../components/type";
 import RecommendCard from "../components/RecommendCard";
 
@@ -87,10 +86,25 @@ const List = ({ stepDetail, listNum, setSelectIdx }: ListProps) => {
   );
 };
 
-const Recipe = () => {
-  const [deck, setDeck] = useState<RecipeCard[]>(cardData);
-  const [selectIdx, setSelectIdx] = useState<number>(0);
+const Recipe = ({ cardData }: { cardData: RecipeCard }) => {
+  const [deck, setDeck] = useState<RecipeCard>(cardData);
+  const [selectIdx, setSelectIdx] = useState<number>(1);
   // console.log(deck[0].cards.length);
+  // console.log("deck", deck);
+  // console.log(selectIdx);
+
+  let listContent = deck.cards.map((card) => (
+    <List
+      key={card.ListNum}
+      stepDetail={card.stepTitle}
+      listNum={card.ListNum}
+      setSelectIdx={setSelectIdx}
+    />
+  ));
+
+  let IngredientContent = deck.Ingredient.map((item, index) => (
+    <IngredientItem key={index}>{item}</IngredientItem>
+  ));
 
   return (
     <div>
@@ -98,38 +112,14 @@ const Recipe = () => {
       <Wrap>
         <RightSideBar>
           <ListTitle>요리 순서</ListTitle>
-          <List
-            stepDetail="재료 준비"
-            listNum={1}
-            setSelectIdx={setSelectIdx}
-          />
-          <List stepDetail="썰기" listNum={2} setSelectIdx={setSelectIdx} />
-          <List
-            stepDetail="볶기"
-            listNum={3}
-            setSelectIdx={setSelectIdx}
-          ></List>
-          <List
-            stepDetail="밥 넣기"
-            listNum={4}
-            setSelectIdx={setSelectIdx}
-          ></List>
-          <List
-            stepDetail="밥 넣기"
-            listNum={5}
-            setSelectIdx={setSelectIdx}
-          ></List>
+          {listContent}
         </RightSideBar>
         <Main>
-          <Slider recipeList={deck[0]} selectIdx={selectIdx} />
+          <Slider recipeList={deck} selectIdx={selectIdx} />
         </Main>
         <LeftSideBar>
           <ListTitle>요리 재료</ListTitle>
-          <IngredientItem>밥</IngredientItem>
-          <IngredientItem>소세지</IngredientItem>
-          <IngredientItem>김치</IngredientItem>
-          <IngredientItem>간장</IngredientItem>
-          <IngredientItem>참기름</IngredientItem>
+          {IngredientContent}
         </LeftSideBar>
       </Wrap>
       <Footer>
