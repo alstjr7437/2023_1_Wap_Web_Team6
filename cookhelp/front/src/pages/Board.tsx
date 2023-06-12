@@ -83,6 +83,19 @@ const Main = styled.div`
   width: 80%;
 `;
 
+const Btn = styled.button`
+  width:15%;
+    height: 29px;
+    text-align: center;
+    box-sizing: border-box;
+    text-decoration: none;
+    border:none;
+    background:#333;
+    color:#fff;
+    font-size:14px;
+    cursor: pointer;
+`
+
 const Board = () => {
   const params = useParams();
   // console.log(params.recipe_idx);
@@ -282,7 +295,7 @@ const Board = () => {
                <span className='ps-box'>
                   <input onChange={handleValueChange} value={registerCmtData.CmtPassword} type='text' name= "CmtPassword" className='CmtPassword' placeholder='비밀번호' />
                </span>
-               <button className='btn' onClick={cmtbtnClick}>작성하기</button>
+               <Btn className='btn' onClick={cmtbtnClick}>작성하기</Btn>
             </form>
          </li>
 

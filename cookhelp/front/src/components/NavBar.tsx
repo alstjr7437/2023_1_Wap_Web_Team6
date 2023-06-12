@@ -61,7 +61,7 @@ const Navbar = () => {
   const { setIsLogin } = useContext(AuthContext);
   const [activeMenuItem, setActiveMenuItem] = useState(0); // 현재 활성화된 메뉴 아이템의 인덱스를 상태로 관리
   const [mode, setMode] = useState("");
-  const { tapItem, setTapItem } = useContext(TapContext);
+  const { tapItem, setTapItem} = useContext(TapContext);
 
   const handleBtnClick = (e: React.MouseEvent<HTMLButtonElement>): void => {
     localStorage.setItem("isLogin", "False");
@@ -101,12 +101,23 @@ const Navbar = () => {
   }
 
   const handleMenuItemClick = (menuItemIndex: number) => {
+    if (menuItemIndex == 0){
+      localStorage.removeItem('curTap')
+    }
+    else if (menuItemIndex == 1){
+      localStorage.setItem('curTap', 'recipe')
+    } else {
+      localStorage.setItem('curTap', 'community')
+    }
     setActiveMenuItem(menuItemIndex);
     setTapItem(menuItemIndex);
   };
 
+  const curTapName = localStorage.getItem("curTap");
   useEffect(() => {
-    if (tapItem !== 0) setActiveMenuItem(tapItem);
+    if (curTapName === "recipe") setActiveMenuItem(1)
+    else if (curTapName === "community") setActiveMenuItem(2)
+    else setActiveMenuItem(0)
   }, []);
 
   return (

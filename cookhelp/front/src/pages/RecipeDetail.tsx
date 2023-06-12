@@ -9,6 +9,7 @@ import {
   fetchRecipeCardsProps,
   StepItemProps,
 } from "../components/type";
+import MenuIcon from "@mui/icons-material/Menu";
 
 import imgSrc from "../assets/양식.jpg";
 
@@ -46,6 +47,11 @@ const StyledImg = styled.img`
   max-height: 150px;
   width: auto;
   height: auto;
+`;
+const MenuBtn = styled(Btn)`
+  position: absolute;
+  top: -4rem;
+  right: 15%;
 `;
 
 const StepItem = ({ card, img }: StepItemProps & { img?: string }) => {
@@ -160,6 +166,10 @@ const RecipeDetail = () => {
     navigate(`/recipe/${params.recipe_idx}`);
   };
 
+  const navToList = () => {
+    navigate("/recipe_list");
+  };
+
   return (
     <>
       <NavBar />
@@ -183,6 +193,12 @@ const RecipeDetail = () => {
           <StepItem key={idx} card={elm} img={imageData[idx + 1]} />
         ))}
       </StyledContainer>
+      <StyledBtnWrap>
+        <MenuBtn onClick={navToList}>
+          목록　
+          <MenuIcon fontSize="small" />
+        </MenuBtn>
+      </StyledBtnWrap>
     </>
   );
 };

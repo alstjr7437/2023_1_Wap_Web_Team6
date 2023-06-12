@@ -29,3 +29,7 @@ body {
   font-family: var(--ff-gothic);
   font-weight: var(--med-font);
 }
+
+ul,li{
+  list-style:none;
+}
